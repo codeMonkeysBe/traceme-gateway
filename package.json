@@ -1,0 +1,25 @@
+{
+  "name": "traceme-gateway",
+  "version": "0.0.1",
+  "description": "A distributed TraceME gateway implementing https://github.com/synapticle/rfc/2",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/synapticle/traceme-gateway.git"
+  },
+  "keywords": [
+    "IoT",
+    "TraceME",
+    "tracking",
+    "GPS"
+  ],
+  "author": "Niki Van Cleemput",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/synapticle/traceme-gateway/issues"
+  },
+  "homepage": "https://github.com/synapticle/traceme-gateway#readme"
+}
