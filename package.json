@@ -26,6 +26,7 @@
   "dependencies": {
     "@types/node": "^8.0.2",
     "@types/uuid": "^3.0.0",
+    "@types/winston": "^2.3.3",
     "@types/zmq": "0.0.20",
     "uuid": "^3.1.0",
     "winston": "^2.3.1",
