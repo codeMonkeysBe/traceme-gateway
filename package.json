@@ -4,7 +4,8 @@
   "description": "A distributed TraceME gateway implementing https://github.com/synapticle/rfc/2",
   "main": "bin/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsc & nodemon bin/index.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,14 @@
   },
   "homepage": "https://github.com/synapticle/traceme-gateway#readme",
   "dependencies": {
+    "@types/node": "^8.0.2",
+    "@types/uuid": "^3.0.0",
+    "@types/zmq": "0.0.20",
+    "uuid": "^3.1.0",
+    "winston": "^2.3.1",
     "zmq": "^2.15.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
