@@ -5,7 +5,7 @@
   "main": "bin/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsc & nodemon bin/index.js"
+    "dev": "tsc & nodemon -- bin/index.js"
   },
   "repository": {
     "type": "git",
@@ -26,10 +26,10 @@
   "dependencies": {
     "@types/node": "^8.0.2",
     "@types/uuid": "^3.0.0",
-    "@types/winston": "^2.3.3",
     "@types/zmq": "0.0.20",
+    "protobufjs": "~6.8.0",
+    "traceme-server": "0.0.8",
     "uuid": "^3.1.0",
-    "winston": "^2.3.1",
     "zmq": "^2.15.3"
   },
   "devDependencies": {
