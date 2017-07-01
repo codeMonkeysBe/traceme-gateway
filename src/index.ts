@@ -1,22 +1,22 @@
-import * as zmq from "zmq";
-import * as uuid from "uuid";
+import * as cluster from "cluster";
+import * as os from "os";
 
-import { logger } from "./lib/logger";
 
-logger.level = "silly";
+import { TracemeGateway } from "./lib/traceme-gateway";
+import { GatewayBroker } from "./lib/gateway-broker";
 
-var dealer = zmq.socket('dealer');
 
-dealer.identity = `pid://${process.pid}/traceme-gateway`;
+if(cluster.isWorker) {
+  // This executes in the worker process. Let's get to work.
+  const gateway = new TracemeGateway();
 
-dealer.connect('tcp://127.0.0.1:3000');
+} else {
 
-dealer.send('doing it');
+  const gatewayBroker = new GatewayBroker();
 
-dealer.on('message', (...frames) => {
-  let decoded: string[] = frames.map((frame: Buffer) => {
-    return frame.toString();
-  });
-  dealer.send('doing it again');
-  logger.debug('message', dealer.identity, decoded);
-});
+  // This executes in the master process, from here we fork our children
+  for(let childrenForked = 0; childrenForked < 6; childrenForked++) {
+    cluster.fork();
+  }
+
+}
